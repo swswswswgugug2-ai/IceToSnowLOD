@@ -1,0 +1,35 @@
+plugins {
+    id 'fabric-loom' version '1.15-SNAPSHOT'
+}
+
+version = '0.1.0'
+group = 'kr.ice2snow'
+
+base {
+    archivesName = 'IceToSnowLOD'
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.fabricmc.net/' }
+    maven { url = 'https://maven.distant-horizons.com/releases' }
+    maven { url = 'https://api.modrinth.com/maven' }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:26.2.0'
+    mappings loom.officialMojangMappings()
+    modImplementation 'net.fabricmc:fabric-loader:0.19.5'
+    // Distant Horizons 3.3.3 for Minecraft 26.2 (Fabric/NeoForge).
+    modCompileOnly 'maven.modrinth:uCdwusMi:aAow4a9f'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}

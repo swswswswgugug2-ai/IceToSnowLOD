@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "ice_to_snow_lod",
+  "version": "0.1.0",
+  "name": "Ice to Snow LOD",
+  "description": "Represents vanilla ice-family blocks as snow material and color in Distant Horizons LODs.",
+  "authors": ["OpenAI"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "main": ["kr.ice2snow.lod.IceToSnowLod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "26.2.0",
+    "java": ">=25",
+    "distanthorizons": ">=3.3.3"
+  }
+}
