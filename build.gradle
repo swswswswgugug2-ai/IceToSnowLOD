@@ -1,8 +1,8 @@
 plugins {
-    id 'fabric-loom' version '1.15-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version '1.17.13'
 }
 
-version = '0.1.0'
+version = '0.1.1'
 group = 'kr.ice2snow'
 
 base {
@@ -12,16 +12,17 @@ base {
 repositories {
     mavenCentral()
     maven { url = 'https://maven.fabricmc.net/' }
-    maven { url = 'https://maven.distant-horizons.com/releases' }
     maven { url = 'https://api.modrinth.com/maven' }
 }
 
 dependencies {
-    minecraft 'com.mojang:minecraft:26.2.0'
-    mappings loom.officialMojangMappings()
-    modImplementation 'net.fabricmc:fabric-loader:0.19.5'
-    // Distant Horizons 3.3.3 for Minecraft 26.2 (Fabric/NeoForge).
+    // Minecraft 26.2 is published as 26.2 (not 26.2.0) in Mojang's version metadata.
+    minecraft 'com.mojang:minecraft:26.2'
+
+    // Distant Horizons 3.3.3 for Minecraft 26.2, compile-time API reference.
     modCompileOnly 'maven.modrinth:uCdwusMi:aAow4a9f'
+
+    modImplementation 'net.fabricmc:fabric-loader:0.19.5'
 }
 
 java {
